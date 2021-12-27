@@ -1,0 +1,57 @@
+{
+    "name": "OG #0003",
+    "symbol": "OG",
+    "description": "OceanGuardians NFT project",
+    "seller_fee_basis_points": 666,
+    "image": "text.html",
+    "animation_url": "text.html",
+    "external_url": "OceanGuardians.sol",
+    "attributes": [
+      {
+        "trait_type": "Body",
+        "value": "Swimsuit"
+      },
+      {
+        "trait_type": "Hair",
+        "value": "Long"
+      },
+      {
+        "trait_type": "Beard",
+        "value": "full"
+      }
+    ],
+    "dynamic_attributes": [
+      {
+        "trait_type": "Wave",
+        "value": "Big Wave"
+      },
+      {
+        "trait_type": "Location",
+        "value": "orange"
+      },
+      {
+        "trait_type": "Board",
+        "value": "Sci-fi"
+      }
+    ],
+    "collection": {
+      "name": "OceanGuardians Genesis",
+      "family": "OGGenesis"
+    },
+    "properties": {
+      "files": [
+        {
+          "uri": "3.html",
+          "type": "text/html"
+        }
+      ],
+      "category": "html",
+      "creators": [
+        {
+          "address": "FntXUJoFNvXTbLXj5NfDgikMqSGjQ6JhhX3ia694i1fD",
+          "share": 100
+        }
+      ],
+      "update_authority": "FntXUJoFNvXTbLXj5NfDgikMqSGjQ6JhhX3ia694i1fD"
+    }
+  }

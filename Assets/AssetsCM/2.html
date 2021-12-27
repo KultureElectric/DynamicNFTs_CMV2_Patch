@@ -1,0 +1,83 @@
+    <html>
+        <head>
+        <meta charset="UTF-8" />
+        <title>OCEAN GUARDIAN #0002</title>
+        </head>
+        <body>
+        <section>
+        <img
+        style="z-index: 1;
+        position: fixed;
+        height:100%; width:100%;
+        top:0;
+        bottom: 0;
+        right: 0;
+        left:0;" 
+        src="https://x6jmaqbgmop2hj37vsmcpc6nmoulfgib6qygqrz4q6lw2fd6qnvq.arweave.net/v5LAQCZjn6Onf6yYJ4vNY6iymQH0MGhHPIeXbRR-g2s/?ext=png">
+        <img
+        style="z-index: 0;
+        position: fixed;
+        height:100%; width:100%;
+        top:0;
+        bottom: 0;
+        right: 0;
+        left:0;"
+        id='bg'>
+        </section>
+    
+    
+        <script type="text/javascript">
+    
+        async function init() {
+        await drawAll();
+        // setInterval(drawAll, 1000*60*60*4); // updates every 4 hours
+        }
+    
+        async function drawAll() {
+          let location;
+          let wave;
+          let board;
+
+          const id = '0002';
+          try {
+            let dynamicLayers = await fetch(`https://us-central1-oceanguardians-f14c3.cloudfunctions.net/getLayers/${id}`, {
+            method : "GET",
+            cache: 'no-cache'
+            }).then(response => response.json());
+            dynamicLayers.forEach(l => {
+              if(l.trait_type === 'Location') {location = l.value};
+              if(l.trait_type === 'Board') {board = l.value};
+              if(l.trait_type === 'Wave') {wave = l.value};
+            });
+            console.log(location);
+
+
+            if (location === 'red'){
+            const redBackground = "https://a7g2ppvqsvchighvdbmpn52ozvabzfq3z3pixcnk6omwwsaxwu5q.arweave.net/B82nvrCVRHQY9RhY9vdOzUAclhvO3ouJqvOZa0gXtTs/?ext=png";
+            document.getElementById('bg').src = redBackground;
+          } if (location === 'orange') {
+            const orangeBackground = "https://72o6yyytjwvslhkcbit7v6vyif4evvwgg5ff3xxqgc53ftn5444a.arweave.net/_p3sYxNNqyWdQgon-vq4QXhK1sY3Sl3e8DC7ss295zg/?ext=png";
+            document.getElementById('bg').src = orangeBackground;
+          } if (location === 'green') {
+            const greenBackground = "https://byvxbyn2zb5otxjh3mtonrkk6fbec3erzleriqak3nxgwufxsnxa.arweave.net/Ditw4brIeundJ9sm5sVK8UJBbJHKyRRACttua1C3k24/?ext=png";
+            document.getElementById('bg').src = greenBackground;
+          } if (location === 'blue') {
+            const blueBackground = "https://tpqfep342npz5nkys35vnsu7sy7gecvm2tn4wg4yhiuoqc634ksa.arweave.net/m-BSP3zTX561WJb7Vsqflj5iCqzU28sbmDoo6Avb4qQ/?ext=png";
+            document.getElementById('bg').src = blueBackground;
+          } if (location === 'black') {
+            const blackBackground = "https://yasnngzc4lq4drrda5zge2tytfqp5nzsii3ppjeljuoksclldwva.arweave.net/wCTWmyLi4cHGIwdyYmp4mWD-tzJCNveki00cqQlrHao/?ext=png";
+            document.getElementById('bg').src = blackBackground;
+          } 
+          } catch (e) {
+            console.log(e);
+          }
+        }
+    
+        init();
+        </script>
+        </section>
+        </body>
+        </html>
+    
+    
+        
